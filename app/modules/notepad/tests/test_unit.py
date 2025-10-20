@@ -1,15 +1,18 @@
 import pytest
 
 
+from app import db
+from app.modules.notepad.models import Notepad
+import app.modules.notepad.models as models
+from app.modules.auth.models import User
+from app.modules.conftest import login, logout
+from app.modules.profile.models import UserProfile
+
 @pytest.fixture(scope='module')
 def test_client(test_client):
     """
     Extends the test_client fixture to add additional specific data for module testing.
-    """
-    with test_client.application.app_context():
-        # Add HERE new elements to the database that you want to exist in the test context.
-        # DO NOT FORGET to use db.session.add(<element>) and db.session.commit() to save the data.
-        pass
+    """     
 
     yield test_client
 
@@ -22,3 +25,7 @@ def test_sample_assertion(test_client):
     """
     greeting = "Hello, World!"
     assert greeting == "Hello, World!", "The greeting does not coincide with 'Hello, World!'"
+    
+
+
+    

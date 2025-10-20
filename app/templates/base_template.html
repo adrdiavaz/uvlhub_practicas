@@ -128,6 +128,23 @@ chico sundermann">
                         </a>
                     </li>
 
+                    <li class="sidebar-header">
+                        Notepads
+                    </li>
+
+                    <li class="sidebar-item {{ 'active' if request.endpoint == 'notepad.index' else '' }}">
+                        <a class="sidebar-link" href="{{ url_for('notepad.index') }}">
+                            <i class="align-middle" data-feather="list"></i> <span
+                                class="align-middle">See notepads</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item {{ 'active' if request.endpoint == 'notepad.create_notepad' else '' }}">
+                        <a class="sidebar-link" href="{{ url_for('notepad.create_notepad') }}">
+                            <i class="align-middle" data-feather="upload"></i> <span
+                                class="align-middle">Create notepad</span>
+                        </a>
+                    </li>
+
                 {% endif %}
 
             </ul>
